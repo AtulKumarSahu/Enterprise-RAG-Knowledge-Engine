@@ -1,0 +1,29 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: enterprise-knowledge-ai
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+app:
+  ai:
+    rag:
+      chunk-size: 500
+      chunk-overlap: 50
+      top-k: 3
+      min-similarity: 0.20
+    quota:
+      default-daily-tokens: 50000
